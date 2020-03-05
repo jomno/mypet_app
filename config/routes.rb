@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'kakao_apis/create'
+  post 'kakao_apis/create'
   root "admin/dashboard#index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
