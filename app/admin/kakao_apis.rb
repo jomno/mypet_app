@@ -3,9 +3,8 @@ ActiveAdmin.register KakaoApi do
     attributes_table do
       row :id
       row :create_at
-      row :input_data
-      row :source_json_2 do |model|
-        JSON.pretty_generate(model.input_data)
+      row :input_data do |model|
+        pre JSON.pretty_generate(model.input_data)
       end
     end
   end
