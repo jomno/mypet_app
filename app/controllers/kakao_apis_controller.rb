@@ -85,6 +85,7 @@ class KakaoApisController < ApplicationController
           }
       }
     else
+      
     end
 
     render json: result
