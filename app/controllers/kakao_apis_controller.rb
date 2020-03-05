@@ -82,6 +82,9 @@ class KakaoApisController < ApplicationController
             {
               "basicCard": {
                 "title": "결과가 나왔습니다.",
+                "thumbnail": {
+                  "imageUrl": "http://pet.semicolon.link#{ActionController::Base.helpers.asset_path('puppy.jpg')}"
+                },
                 "buttons": [
                   {
                     "action": "webLink",
