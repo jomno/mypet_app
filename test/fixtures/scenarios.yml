@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species: one
+  symptom: one
+  no_symptom: one
+  ancestry: MyString
+
+two:
+  species: two
+  symptom: two
+  no_symptom: two
+  ancestry: MyString
