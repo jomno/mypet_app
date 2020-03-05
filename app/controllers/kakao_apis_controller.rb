@@ -84,8 +84,53 @@ class KakaoApisController < ApplicationController
               ]
           }
       }
-    else
+    elsif scenario.solution.present?
+      solution = scenario.solution
       
+      result = {
+        "version": "2.0",
+        "template": {
+          "outputs": [
+            {
+              "basicCard": {
+                "title": "결과가 나왔습니다.",
+                "buttons": [
+                  {
+                    "action": "webLink",
+                    "label": "결과 확인",
+                    "webLinkUrl": "#{solution.link}"
+                  },
+                  {
+                    "action":  "webLink",
+                    "label": "펫트너로 이동",
+                    "webLinkUrl": "https://petner.kr/"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    else
+      result = {
+        "version": "2.0",
+        "template": {
+          "outputs": [
+            {
+              "basicCard": {
+                "title": "없는 케이스입니다. 펫트너에서 전문 문의해주세요!",
+                "buttons": [
+                  {
+                    "action":  "webLink",
+                    "label": "펫트너로 이동",
+                    "webLinkUrl": "https://petner.kr/"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
     end
 
     render json: result
