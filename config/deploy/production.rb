@@ -1,3 +1,6 @@
+set :deploy_to, '/home/deploy/mypet_app'
+server '15.164.232.112', user: 'deploy', roles: %w{app db web}
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
