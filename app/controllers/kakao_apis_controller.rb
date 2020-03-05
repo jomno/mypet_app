@@ -37,16 +37,20 @@ class KakaoApisController < ApplicationController
 
     present_symptom = Symptom.find_by(name: symptom_name)
     
+    # 저장된 유증상
     yes_symptoms = user.yes_symptoms.ids
+    # 저장된 무증상
     no_symptoms = user.no_symptoms.ids
 
     if intent == "유증상 확인"
       yes_symptoms << present_symptom.id
+      user.yes_symptoms << present_symptom
     elsif intent == "무증상 확인"
       no_symptoms << present_symptom.id
+      user.no_symptoms << present_symptom
     end
 
-    scenario = ScenarioService.new(yes_symptoms, no_symptoms)
+    scenario = ScenarioService.new(yes_symptoms.uniq, no_symptoms.uniq)
 
     if scenario.next_symptom.present?
       next_symptom = Symptom.find scenario.next_symptom
@@ -82,7 +86,6 @@ class KakaoApisController < ApplicationController
       }
     else
     end
-
 
     render json: result
   end
