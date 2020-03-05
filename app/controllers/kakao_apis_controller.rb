@@ -137,14 +137,14 @@ class KakaoApisController < ApplicationController
         "template": {
           "outputs": [
             {
-              "basicCard": {
-                "title": "처음부터 다시 시작합니다."
-              }
+                "simpleText": {
+                    "text": "처음부터 다시 시작합니다."
+                }
             },
             {
-              "basicCard": {
-                "title": "귓병이 있습니까?"
-              }
+                "simpleText": {
+                    "text": "귓병이 있습니까?"
+                }
             }
           ],
           "quickReplies": [
