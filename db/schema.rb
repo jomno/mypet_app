@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_152606) do
+ActiveRecord::Schema.define(version: 2020_03_05_181146) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_03_05_152606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "bot_name"
+    t.string "intent_name"
     t.index ["user_id"], name: "index_kakao_apis_on_user_id"
   end
 

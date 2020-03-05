@@ -8,5 +8,4 @@ class User < ApplicationRecord
 
     has_many :no_taggings, -> { send('무증상') }, class_name: :UserTagging, dependent: :destroy
     has_many :no_symptoms, through: :no_taggings, source: :symptom
-
 end
