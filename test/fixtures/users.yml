@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bot_user_key: MyString
+  plusfriend_user_key: MyString
+  yes_symptoms: MyText
+  no_symptoms: MyText
+
+two:
+  bot_user_key: MyString
+  plusfriend_user_key: MyString
+  yes_symptoms: MyText
+  no_symptoms: MyText

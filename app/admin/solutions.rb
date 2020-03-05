@@ -10,8 +10,12 @@ ActiveAdmin.register Solution do
 		# 나머지 칼럼 정보 표시
 		column :title
 		column :link
-		column :yes_symptoms
-		column :no_symptoms
+		column :yes_symptoms do |obj|
+			obj.yes_symptoms.ids
+		end
+		column :no_symptoms do |obj|
+			obj.no_symptoms.ids
+		end
 
 		# 보기, 수정, 삭제 링크 표시
 		actions
