@@ -125,7 +125,7 @@ class KakaoApisController < ApplicationController
   end
   
   def reset
-    @user.taggings.destroy_all
+    @user&.user_taggings&.destroy_all
 
     result = {
         "version": "2.0",
@@ -145,7 +145,7 @@ class KakaoApisController < ApplicationController
           "quickReplies": [
             {
               "action": "message",
-              "label": "귓병",
+              "label": "예",
               "messageText": "귓병 증상이 있습니다."
             }
           ]
