@@ -5,7 +5,7 @@ class KakaoApisController < ApplicationController
     render json: {
         "version": "2.0",
         "data": {
-          "msg": params.dig("action", "params", "species")
+          "msg": "다시 한 번 말씀해주세요!" # params.dig("action", "params", "species")
         }
       }
   end
