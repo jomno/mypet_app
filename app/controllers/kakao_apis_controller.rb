@@ -1,11 +1,7 @@
 class KakaoApisController < ApplicationController
+  before_action :set_bot_data
+
   def create
-    params = request.request_parameters
-    bot_user_key = params.dig("userRequest", "user", "properties", "bot_user_key")
-    plusfriend_user_key = params.dig("userRequest", "user", "properties", "plusfriend_user_key")
-    user = User.find_or_create_by(bot_user_key: params[:bot_user_key], plusfriend_user_key: params[:plusfriend_user_key])
-    # user = User.find_or_create_by(bot_user_key: bot_user_key, plusfriend_user_key: plusfriend_user_key)
-    saved_data = KakaoApi.create(input_data: params, user: user)
     render json: {
         "version": "2.0",
         "template": {
@@ -21,33 +17,25 @@ class KakaoApisController < ApplicationController
   end
 
   def get_solution
-    params = request.request_parameters
-    bot_user_key = params.dig("userRequest", "user", "properties", "bot_user_key")
-    plusfriend_user_key = params.dig("userRequest", "user", "properties", "plusfriend_user_key")
-    user = User.find_or_create_by(bot_user_key: params[:bot_user_key], plusfriend_user_key: params[:plusfriend_user_key]) if Rails.env.development?
-    user = User.find_or_create_by(bot_user_key: bot_user_key, plusfriend_user_key: plusfriend_user_key) if Rails.env.production?
-    
-    saved_data = KakaoApi.create(input_data: params, user: user)
+    intent = @params["intent"] if Rails.env.development?
+    intent = @params.dig("intent", "name") if Rails.env.production?
 
-    intent = params["intent"] if Rails.env.development?
-    intent = params.dig("intent", "name") if Rails.env.production?
-
-    symptom_name = params["symptom"] if Rails.env.development?
-    symptom_name = params.dig("action", "params", "symptom") if Rails.env.production?
+    symptom_name = @params["symptom"] if Rails.env.development?
+    symptom_name = @params.dig("action", "@params", "symptom") if Rails.env.production?
 
     present_symptom = Symptom.find_by(name: symptom_name)
     
     # 저장된 유증상
-    yes_symptoms = user.yes_symptoms.ids
+    yes_symptoms = @user.yes_symptoms.ids
     # 저장된 무증상
-    no_symptoms = user.no_symptoms.ids
+    no_symptoms = @user.no_symptoms.ids
 
     if intent == "유증상 확인"
       yes_symptoms << present_symptom.id
-      user.yes_symptoms << present_symptom
+      @user.yes_symptoms << present_symptom
     elsif intent == "무증상 확인"
       no_symptoms << present_symptom.id
-      user.no_symptoms << present_symptom
+      @user.no_symptoms << present_symptom
     end
 
     scenario = ScenarioService.new(yes_symptoms.uniq, no_symptoms.uniq)
@@ -136,7 +124,40 @@ class KakaoApisController < ApplicationController
     render json: result
   end
   
+  def reset
+    @user.taggings.destroy_all
+
+    result = {
+        "version": "2.0",
+        "template": {
+          "outputs": [
+            {
+              "basicCard": {
+                "title": "처음 부터 다시 시작합니다."
+              }
+            }
+          ],
+          "quickReplies": [
+            {
+              "action": "message",
+              "label": "귓병이 있습니다.",
+              "messageText": "#{next_symptom.name} 증상이 있습니다."
+            }
+          ]
+        }
+      }
+
+    render json: result
+  end
+
   private
-  def get_user
+  def set_bot_data
+    @params = request.request_parameters
+    @bot_user_key = @params.dig("userRequest", "user", "properties", "bot_user_key")
+    @plusfriend_user_key = @params.dig("userRequest", "user", "properties", "plusfriend_user_key")
+    @user = User.find_or_create_by(bot_user_key: @params[:bot_user_key], plusfriend_user_key: @params[:plusfriend_user_key]) if Rails.env.development?
+    @user = User.find_or_create_by(bot_user_key: @bot_user_key, plusfriend_user_key: @plusfriend_user_key) if Rails.env.production?
+    
+    @saved_data = KakaoApi.create(input_data: @params, user: @user)
   end
 end
