@@ -135,13 +135,18 @@ class KakaoApisController < ApplicationController
               "basicCard": {
                 "title": "처음 부터 다시 시작합니다."
               }
+            },
+            {
+              "basicCard": {
+                "title": "귓병이 있습니까?"
+              }
             }
           ],
           "quickReplies": [
             {
               "action": "message",
-              "label": "귓병이 있습니다.",
-              "messageText": "#{next_symptom.name} 증상이 있습니다."
+              "label": "귓병",
+              "messageText": "귓병 증상이 있습니다."
             }
           ]
         }
