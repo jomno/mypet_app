@@ -5,6 +5,7 @@ class KakaoApisController < ApplicationController
     logger.info "userRequest: #{params[:userRequest]}"
     logger.info "bot: #{params[:bot]}"
     logger.info "action: #{params[:action]}"
-    render json: {response: :success}    
+    saved_data = KakaoApi.create(input_data: params)
+    render json: {response: :success, data: saved_data}    
   end
 end
