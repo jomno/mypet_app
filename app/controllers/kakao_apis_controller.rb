@@ -92,6 +92,11 @@ class KakaoApisController < ApplicationController
                     "action":  "webLink",
                     "label": "펫트너로 이동",
                     "webLinkUrl": "https://petner.kr/"
+                  },
+                  {
+                    "action":  "message",
+                    "label": "처음부터 하기",
+                    "messageText": "처음부터"
                   }
                 ]
               }
@@ -133,7 +138,7 @@ class KakaoApisController < ApplicationController
           "outputs": [
             {
               "basicCard": {
-                "title": "처음 부터 다시 시작합니다."
+                "title": "처음부터 다시 시작합니다."
               }
             },
             {
