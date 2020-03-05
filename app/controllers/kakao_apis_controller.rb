@@ -57,7 +57,7 @@ class KakaoApisController < ApplicationController
               "outputs": [
                   {
                       "simpleText": {
-                          "text": "#{present_symptom.name} 증상 확인되었습니다."
+                          "text": "#{present_symptom.name} #{intent}되었습니다."
                       }
                   },
                   {
