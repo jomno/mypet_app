@@ -21,7 +21,7 @@ class KakaoApisController < ApplicationController
     intent = @params.dig("intent", "name") if Rails.env.production?
 
     symptom_name = @params["symptom"] if Rails.env.development?
-    symptom_name = @params.dig("action", "@params", "symptom") if Rails.env.production?
+    symptom_name = @params.dig("action", "params", "symptom") if Rails.env.production?
 
     present_symptom = Symptom.find_by(name: symptom_name)
     
