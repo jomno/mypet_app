@@ -5,7 +5,7 @@ set :application, "mypet_app"
 set :repo_url, "git@github.com:jomno/mypet_app.git"
 set :keep_releases, 4
 
-append :linked_files, "config/master.key", "config/application.yml"
+append :linked_files, "config/master.key"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 # Default branch is :master
