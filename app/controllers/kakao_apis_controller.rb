@@ -173,11 +173,11 @@ class KakaoApisController < ApplicationController
         "outputs": [
           {
             "basicCard": {
-              "title": "동물 병원 장소가 겁색되었습니다.",
+              "title": "#{place_name} 주변 동물 병원이 검색되었습니다.",
               "buttons": [
                 {
                   "action":  "webLink",
-                  "label": "펫트너로 이동",
+                  "label": "동물병원 확인하기",
                   "webLinkUrl": "http://pet.semicolon.link/maps/show?place=#{place_name}"
                 }
               ]
