@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'maps/show'
   resources :solutions, only: [:show] do 
     member do
       get :link
     end
   end
+  post 'kakao_apis/get_place'
   post 'kakao_apis/create'
   post 'kakao_apis/get_solution'
   post 'kakao_apis/reset'

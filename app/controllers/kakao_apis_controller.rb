@@ -163,6 +163,21 @@ class KakaoApisController < ApplicationController
     render json: result
   end
 
+  def get_place
+    render json: {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": "장소가 검색되었습니다!"
+                    }
+                }
+            ]
+        }
+    }
+  end
+
   private
   def set_bot_data
     @params = request.request_parameters
