@@ -111,6 +111,11 @@ function displayPlaces(places) {
                 displayInfowindow(marker, title);
             });
 
+            kakao.maps.event.addListener(marker, 'click', function() {
+                infowindow.close();
+                displayInfowindow(marker, title);
+            });
+
             kakao.maps.event.addListener(marker, 'mouseout', function() {
                 infowindow.close();
             });
