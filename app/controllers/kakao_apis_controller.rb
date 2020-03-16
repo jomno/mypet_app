@@ -164,18 +164,30 @@ class KakaoApisController < ApplicationController
   end
 
   def get_place
-    render json: {
-        "version": "2.0",
-        "template": {
-            "outputs": [
+    place_name = @params["place"] if Rails.env.development?
+    place_name = @params.dig("action", "params", "place") if Rails.env.production?
+
+    result = {
+      "version": "2.0",
+      "template": {
+        "outputs": [
+          {
+            "basicCard": {
+              "title": "동물 병원 장소가 겁색되었습니다.",
+              "buttons": [
                 {
-                    "simpleText": {
-                        "text": "장소가 검색되었습니다!"
-                    }
+                  "action":  "webLink",
+                  "label": "펫트너로 이동",
+                  "webLinkUrl": "http://pet.semicolon.link/maps/show?place=#{place_name}"
                 }
-            ]
-        }
+              ]
+            }
+          }
+        ]
+      }
     }
+
+    render json: result
   end
 
   private
