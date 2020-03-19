@@ -18,6 +18,7 @@ ActiveAdmin.register KakaoApi do
     column :bot_name
     column :intent_name
     column :created_at
+    column :updated_at
 
     # 보기, 수정, 삭제 링크 표시
     actions
