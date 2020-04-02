@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_181146) do
+ActiveRecord::Schema.define(version: 2020_04_02_135153) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,26 +68,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_181146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["species_id"], name: "index_symptoms_on_species_id"
-  end
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer "symptom_id"
-    t.integer "status", default: 0
-    t.integer "solution_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["solution_id"], name: "index_taggings_on_solution_id"
-    t.index ["symptom_id"], name: "index_taggings_on_symptom_id"
-  end
-
-  create_table "user_taggings", force: :cascade do |t|
-    t.integer "symptom_id"
-    t.integer "status", default: 0
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["symptom_id"], name: "index_user_taggings_on_symptom_id"
-    t.index ["user_id"], name: "index_user_taggings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
