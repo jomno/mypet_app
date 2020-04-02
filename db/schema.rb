@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_135153) do
+ActiveRecord::Schema.define(version: 2020_04_02_140827) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_04_02_135153) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "position"
+    t.boolean "is_end", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
   create_table "kakao_apis", force: :cascade do |t|
     t.text "input_data"
     t.datetime "created_at", null: false
@@ -46,6 +55,15 @@ ActiveRecord::Schema.define(version: 2020_04_02_135153) do
     t.string "bot_name"
     t.string "intent_name"
     t.index ["user_id"], name: "index_kakao_apis_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "body"
+    t.integer "position"
+    t.integer "symptom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["symptom_id"], name: "index_questions_on_symptom_id"
   end
 
   create_table "solutions", force: :cascade do |t|

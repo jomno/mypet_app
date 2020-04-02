@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyString
+  position: 1
+  symptom: one
+
+two:
+  body: MyString
+  position: 1
+  symptom: two
