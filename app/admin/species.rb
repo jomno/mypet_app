@@ -1,19 +1,12 @@
 ActiveAdmin.register Species do
 
   filter :name
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :name
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
+  # show 페이지에서만 보이는 커스텀 버튼 생성
+  action_item :create, only: :show do
+      # 커스텀 버튼을 클릭했을 때 요청 생성
+      # if 통해서 분기 처리
+      link_to "#{resource.class.name} 생성", new_admin_species_path
+  end
 
 end
