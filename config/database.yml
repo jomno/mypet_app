@@ -9,6 +9,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
+pg: &pg
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: localhost
+  port: 5432
+
 development:
   <<: *default
   database: db/development.sqlite3
@@ -21,5 +29,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  <<: *pg
+  username: deploy
+  password: 1234
+  database: mypet_app_production
