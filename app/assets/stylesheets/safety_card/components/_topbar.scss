@@ -1,0 +1,65 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  background-color: $WHITE;
+  box-shadow: inset 0 -1px 0 0 $BACKGROUND;
+
+  &-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.21px;
+    color: $BLACK;
+  }
+
+  .right-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    [class*='icon-'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      line-height: 1;
+
+      &::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &-side-link {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.07px;
+    color: $YELLOW;
+    transform: translateY(-50%);
+
+    &:hover,
+    &:focus {
+      color: darken($YELLOW, 10);
+    }
+  }
+}

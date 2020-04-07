@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import "safety_card/index";
+
+/* reset */
+
+body,
+html {
+  margin: 0;
+}
+
+body,
+html,
+.wrap_safety_card {
+  height: 100%;
+  font-family: $NOTO;
+}
+
+/* variate */
+
+$yellow: #ffc107;
+
+/* mixin */
+
+@mixin title-1($fontSize, $fontWeight, $letterSpacing, $color) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  letter-spacing: $letterSpacing;
+  color: $color;
+}
+
+
+/* common */
+
+.font_normal {
+  font-weight: normal;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.link {
+  height: 24px;
+  border: 0 none;
+  border-radius: 0;
+  background: none;
+}
+
+.txt_bar {
+  margin: 0 10px;
+}
+
+.link,
+.txt_bar {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.85;
+  letter-spacing: -0.87px;
+  color: #aaa;
+}
+
+.ui.yellow {
+  &.button,
+  &.buttons .button {
+    border-radius: 23px;
+    background-color: $yellow;
+  }
+  &.submit {
+    height: 46px;
+  }
+}
+
+.ui.grid {
+  height: 100%;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  .column:not(.row) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.ui.form {
+  .field {
+    margin-bottom: 6px;
+  }
+  .input .inp_txt {
+    width: 100%;
+    height: 46px;
+    border: 0 none;
+    border-radius: 23px;
+    background-color: #f0f0f0;
+    &:focus {
+      background-color: #f0f0f0;
+      border-radius: 23px;
+    }
+  }
+}

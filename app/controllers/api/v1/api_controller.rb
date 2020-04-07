@@ -28,4 +28,31 @@ class Api::V1::ApiController < ActionController::API
             }
         }
     end
+
+    def base_template
+        return {
+            version: "2.0",
+            template: {
+                outputs: []
+            }
+        }
+    end
+
+    def basic_card_template(title, desc)
+        return {
+            basicCard: {
+                title: nil,
+                description: nil,
+                buttons: []
+            }
+        }
+    end
+
+    def buttons_template(label, messageText)
+        return {
+            action: "message",
+            label: label,
+            messageText: messageText
+        }
+    end
 end

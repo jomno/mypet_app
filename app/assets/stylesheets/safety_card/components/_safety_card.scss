@@ -1,0 +1,30 @@
+.safety-card {
+  .safety-card-sample {
+    width: 100%;
+  }
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 63.7037037%;
+  border-radius: 8px;
+  overflow: hidden;
+  &.connected {
+    background-color: $BACKGROUND_LIGHT;
+  }
+  &.blank {
+    border: 2px dashed #dddddd;
+    background-color: $BACKGROUND_LIGHT;
+    strong {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -1.07px;
+      color: #bbb;
+      white-space: nowrap;
+    }
+  }
+}

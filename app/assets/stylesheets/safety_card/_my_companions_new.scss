@@ -1,0 +1,27 @@
+#my_companions_new {
+  .my-companion-guide {
+    padding-top: 12vh;
+    padding-bottom: 30px;
+
+    .my-companion-cat {
+      display: block;
+      width: 140px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.61;
+      letter-spacing: -1.29px;
+      text-align: center;
+      color: #555555;
+    }
+  }
+
+  .fill-button {
+    max-width: 160px;
+    margin: 0 auto;
+  }
+}

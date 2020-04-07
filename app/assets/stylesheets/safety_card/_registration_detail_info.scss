@@ -1,0 +1,42 @@
+#registration_detail_info {
+  padding-bottom: 100px;
+  
+  .registration-header {
+    padding: 30px 0;
+
+    h2 {
+      font-size: 17px;
+      line-height: 1.41;
+      letter-spacing: -1.14px;
+      text-align: center;
+      color: $BLACK;
+    }
+  }
+
+  .registration-form-group {
+    margin-bottom: 30px;
+    h4 {
+      @include text;
+
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: $BLACK;
+    }
+
+    .outlined-input {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    label {
+      position: absolute;
+      z-index: -1;
+      visibility: hidden;
+    }
+  }
+
+  #__daum__layer_1 {
+    min-width: unset !important;
+  }
+}

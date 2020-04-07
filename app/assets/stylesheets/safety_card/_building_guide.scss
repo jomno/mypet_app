@@ -1,0 +1,22 @@
+.building-guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 10px;
+
+    strong {
+      margin-right: 4px;
+    }
+  }
+
+  .checklist {
+    margin-top: 0;
+  }
+}

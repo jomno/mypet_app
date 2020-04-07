@@ -1,0 +1,39 @@
+#emergency_edit {
+  background-color: $BACKGROUND_LIGHT;
+
+  .emergency-guide {
+    margin: 40px 0;
+
+    p {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: -1.14px;
+      color: $BLACK;
+    }
+  }
+
+  .emergency-form {
+    .emergency-input {
+      margin-bottom: 16px;
+    }
+
+    label {
+      @include text;
+
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: $BLACK;
+
+      &::before {
+        content: '*';
+      }
+    }
+
+    .outlined-input:first-of-type:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+}

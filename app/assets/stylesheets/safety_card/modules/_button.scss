@@ -1,0 +1,85 @@
+button:focus,
+button:active {
+  box-shadow: none;
+  outline: none;
+}
+
+.fill-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 100px;
+  background-color: $YELLOW;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: $WHITE;
+  text-decoration: none;
+
+  &.dark {
+    color: $BLACK;
+  }
+}
+
+.bottom-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.14px;
+  color: $BLACK;
+  text-align: center;
+  background-color: $YELLOW;
+
+  &.disabled,
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: #eeeeee;
+    color: $WHITE;
+  }
+}
+
+.outlined-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  padding: 0 30px;
+  border: 2px solid $YELLOW;
+  border-radius: 56px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: $BLACK;
+
+  span {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.secondary {
+    border-width: 1px;
+    border-color: $TERTIARY;
+  }
+}

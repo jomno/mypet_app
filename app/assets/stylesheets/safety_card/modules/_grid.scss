@@ -1,0 +1,56 @@
+$TABLET_MAX_CONTAINER: 360px;
+$MAX_CONTAINER: 420px;
+$GUTTER: 20px;
+
+.wrap_safety_card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $WHITE;
+  overflow: hidden;
+
+  @media screen and (min-width: 414px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 768px) {
+    left: 50%;
+    transform: translate(0, -50%);
+    max-width: $TABLET_MAX_CONTAINER;
+    margin-left: 10px;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: $MAX_CONTAINER;
+    margin-left: 40px;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    padding: 0 $GUTTER;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    &.with-topbar {
+      padding-top: 56px !important;
+    }
+
+    &.no-gutter {
+      padding: 0;
+    }
+  }
+
+}

@@ -1,0 +1,83 @@
+#registration_agree {
+  .registration-header {
+    padding: 30px 0;
+
+    h2 {
+      font-size: 17px;
+      line-height: 1.41;
+      letter-spacing: -1.14px;
+      text-align: center;
+      color: $BLACK;
+    }
+  }
+
+  .registration-item,
+  .registration-agree-all {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    label {
+      @include text;
+
+      display: block;
+      color: $BLACK;
+    }
+  }
+
+  .registration-agree-all {
+    font-weight: 700;
+  }
+
+  .checkbox {
+    position: relative;
+    margin-right: 10px;
+
+    input[type='checkbox'] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .divider {
+    margin: 20px 0;
+    border: 1px solid $BACKGROUND;
+  }
+
+  .registration-event-tooltip {
+    @include text;
+
+    position: absolute;
+    top: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #ffd740 0%, #ffc107 100%);
+    color: $BLACK;
+
+    strong {
+      margin: 0 3px;
+      font-weight: 700;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 34px;
+      width: 0;
+      height: 0;
+      border-top: transparent solid 10px;
+      border-left: transparent solid 8px;
+      border-bottom: #ffd740 solid 10px;
+      border-right: transparent solid 8px;
+    }
+  }
+}

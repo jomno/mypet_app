@@ -1,0 +1,26 @@
+#sessions_no_code_new {
+  .sessions-guide {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+
+    p {
+      @include text;
+
+      color: #555;
+    }
+  }
+
+  .fill-input {
+    margin-bottom: 6px;
+  }
+
+  .fill-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}

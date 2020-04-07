@@ -1,0 +1,27 @@
+%checkbox {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.checkbox {
+  @extend %checkbox;
+
+  border: 1px solid $TERTIARY;
+
+  &.checked {
+    border: 0;
+    background-image: asset-url("safety_card/icons/icon-checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}

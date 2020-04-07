@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'solutions/show'
   get 'maps/show'
   resources :solutions, only: [:show] do 
     member do

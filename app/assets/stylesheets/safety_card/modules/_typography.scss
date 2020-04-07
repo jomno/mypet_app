@@ -1,0 +1,36 @@
+$NOTO: "Noto Sans KR", sans-serif;
+$SPOQA: "SpoqaHanSans", sans-serif;
+
+%title {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -1.88px;
+  line-height: 1.4642857143;
+}
+
+%text {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -1px;
+  color: $SECONDARY;
+}
+
+body {
+  font-family: $NOTO;
+}
+
+@mixin title {
+  @extend %title;
+}
+
+@mixin text {
+  @extend %text;
+}
+
+.title {
+  @include title;
+}
+
+.text {
+  @include text;
+}

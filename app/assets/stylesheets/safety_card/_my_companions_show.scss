@@ -1,0 +1,110 @@
+#my_companions_show {
+  background-color: $BACKGROUND;
+
+  .companion-card {
+    padding: 30px 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $BORDER;
+    box-shadow: none;
+  }
+
+  .companion-section {
+    h2 {
+      padding: 0 $GUTTER;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -1.14px;
+    }
+
+    p {
+      @include text;
+
+      margin: 0;
+      color: #555;
+    }
+
+    .companion-content {
+      padding: 16px $GUTTER 20px;
+      background-color: $WHITE;
+      border-bottom: 1px solid $BORDER;
+    }
+
+
+    .companion-content {
+      li {
+        @include text;
+        padding: 5px 0px 5px 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #efefef;
+        font-size: 12px;
+      }
+    }
+
+    .companion-detail {
+      * {
+        margin: 0;
+      }
+
+      >div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      div.dd-list {
+        display: block;
+
+        dt {
+          margin-bottom: 10px;
+        }
+
+        dd {
+          text-align: right;
+        }
+      }
+
+      dt {
+        @include text;
+
+        font-weight: 700;
+      }
+
+      dd {
+        @include text;
+
+        color: $BLACK;
+      }
+    }
+  }
+
+  .companion-checklist {
+    padding-top: 14px;
+    margin: 0;
+
+    li {
+      @include text;
+
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      color: $BLACK;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .checkbox {
+      position: relative;
+      top: 1px;
+      margin-right: 10px;
+    }
+  }
+}

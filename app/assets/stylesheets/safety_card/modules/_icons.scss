@@ -1,0 +1,88 @@
+%icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-color: transparent;
+  }
+}
+
+.icon-card {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-card.svg");
+  }
+}
+
+.icon-person {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-person.svg");
+  }
+}
+
+.icon-message {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-message.svg");
+  }
+}
+
+.icon-paw {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-paw.svg");
+  }
+}
+
+.icon-arrow-right {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-arrow-right.svg");
+  }
+}
+
+.icon-plus {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-plus.svg");
+  }
+}
+
+.icon-user-profile {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-user.svg");
+  }
+}
+
+.icon-checkbox {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-checkbox.svg");
+  }
+}
+
+
+.icon-long-arrow {
+  @extend %icon;
+
+  &::before {
+    background-image: asset-url("safety_card/icons/icon-long-arrow.svg");
+    background-position: 50% 42%;
+  }
+}
