@@ -1,4 +1,11 @@
 class Solution < ApplicationRecord
+    enum result: [
+        "상대적으로 낮은 위험성",
+        "질병 징후 가능성 있음",
+        "의료진 상담 필요",
+        "준응급상황",
+        "명백한 응급상황"
+    ]
     # has_many :taggings, dependent: :destroy
     # has_many :symptoms, through: :taggings
 

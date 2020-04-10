@@ -9,7 +9,7 @@ ActiveAdmin.register Solution do
 
 		# 나머지 칼럼 정보 표시
 		column :title
-		column :link
+		# column :link
 		# column :yes_symptoms
 		# column :no_symptoms
 
@@ -21,7 +21,12 @@ ActiveAdmin.register Solution do
 	form do |f|
 		f.inputs do
 			f.input :title
-			f.input :link
+			f.input :result
+			f.input :s_id
+			f.input :first_aids
+			f.input :species_name
+			f.input :symptom_name
+			f.input :symptom_details
 			# f.has_many :taggings, heading: '' do |t|
 			# 	t.input :symptom
 			# 	t.input :status

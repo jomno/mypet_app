@@ -35,10 +35,14 @@
     .companion-content {
       li {
         @include text;
-        padding: 5px 0px 5px 5px;
-        margin-bottom: 5px;
-        border-bottom: 1px solid #efefef;
-        font-size: 12px;
+        // padding: 5px 0px 5px 5px;
+        padding-left: 0.1rem;
+        // margin-bottom: 5px;
+        // border-bottom: 1px solid #efefef;
+      }
+
+      li > ol:first-child {
+        margin-block-start: 0.6em;
       }
     }
 

@@ -3,13 +3,19 @@ ko:
   activerecord:
     models:
       admin_user: 관리자
+      solution: 시나리오
     attributes:
       admin_user:
         email: 관리자 이메일
-      scenario: 
-        species: 종
-        symptom: 유증상
-        no_symptom: 무증상
+      solution:
+        title: 증상 시나리오
+        result: 시나리오 결과
+        s_id: 시나리오_id
+        first_aids: 응급처치 방법
+        species_name: 종 이름
+        symptom_name: 증상 이름
+        symptom_details: 주요 증상 정보
+
     errors:
       messages:
         record_invalid: 데이터 검증에 실패하였습니다. %{errors}

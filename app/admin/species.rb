@@ -1,5 +1,5 @@
 ActiveAdmin.register Species do
-
+  menu false
   filter :name
 
   # show 페이지에서만 보이는 커스텀 버튼 생성
