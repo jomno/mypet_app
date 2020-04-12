@@ -38,7 +38,7 @@ class Solution < ApplicationRecord
         "파행",
         "부종",
         "식욕부진",
-        "배출곤란"
+        "배뇨곤란 또는 배변곤란"
     ]
 
     validates :s_id, uniqueness: true
