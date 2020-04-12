@@ -1,0 +1,8 @@
+height: 200
+menubar: false
+toolbar:
+  - undo redo |bullist numlist outdent indent | removeformat
+plugins:
+  - advlist autolink lists link image charmap print preview anchor
+  - searchreplace visualblocks code fullscreen
+  - insertdatetime media table paste code help wordcount

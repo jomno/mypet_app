@@ -9,9 +9,10 @@ ko:
         email: 관리자 이메일
       solution:
         title: 증상 시나리오
-        result: 시나리오 결과
         s_id: 시나리오_id
+        result: 시나리오 결과
         first_aids: 응급처치 방법
+        cause: 원인
         species_name: 종 이름
         symptom_name: 증상 이름
         symptom_details: 주요 증상 정보

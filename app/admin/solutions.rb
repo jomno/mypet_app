@@ -19,18 +19,16 @@ ActiveAdmin.register Solution do
 
 	# 생성, 수정을 위한 폼 정의
 	form do |f|
+		render 'tinymce'
 		f.inputs do
 			f.input :title
 			f.input :result
 			f.input :s_id
-			f.input :first_aids
+			f.input :first_aids, input_html: {class: "tinymce"}
+			f.input :cause, input_html: {class: "tinymce"}
 			f.input :species_name
 			f.input :symptom_name
-			f.input :symptom_details
-			# f.has_many :taggings, heading: '' do |t|
-			# 	t.input :symptom
-			# 	t.input :status
-			# end
+			f.input :symptom_details, input_html: {class: "tinymce"}
 		end
 		# 저장/취소 버튼
 		f.actions

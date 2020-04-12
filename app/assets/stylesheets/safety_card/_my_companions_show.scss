@@ -35,14 +35,15 @@
     .companion-content {
       li {
         @include text;
-        // padding: 5px 0px 5px 5px;
         padding-left: 0.1rem;
-        // margin-bottom: 5px;
-        // border-bottom: 1px solid #efefef;
       }
 
-      li > ol:first-child {
+      li>ol:first-child {
         margin-block-start: 0.6em;
+      }
+
+      p {
+        margin-bottom: 0.2rem;
       }
     }
 
@@ -69,8 +70,14 @@
           margin-bottom: 10px;
         }
 
-        dd {
-          text-align: right;
+        ol {
+          display: table;
+          margin-left: auto;
+          margin-right: 0;
+        }
+
+        li {
+          color: $BLACK;
         }
       }
 

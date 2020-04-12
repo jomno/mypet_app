@@ -70,3 +70,4 @@ gem 'devise'
 gem 'activeadmin'
 gem 'ancestry'
 gem "active_admin-sortable_tree", "~> 2.0.0"
+ gem 'tinymce-rails'

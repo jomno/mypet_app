@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_040919) do
+ActiveRecord::Schema.define(version: 2020_04_12_065810) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_040919) do
     t.string "symptom_name"
     t.text "symptom_details"
     t.integer "result", default: 0
+    t.text "cause"
   end
 
   create_table "species", force: :cascade do |t|
