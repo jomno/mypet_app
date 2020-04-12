@@ -8,6 +8,7 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
+@import "izitoast/dist/css/iziToast";
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "active_admin/sortable";

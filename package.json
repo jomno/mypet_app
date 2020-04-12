@@ -1,5 +1,7 @@
 {
   "name": "mypet_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "izitoast": "^1.4.0"
+  }
 }
