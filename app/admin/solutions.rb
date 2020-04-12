@@ -5,16 +5,21 @@ ActiveAdmin.register Solution do
 		selectable_column
 
 		# ID 필드 표시
-		id_column
+		# id_column
 
 		# 나머지 칼럼 정보 표시
-		column :title
+		column :s_id
+		column :title do |obj|
+			"#{obj.species_name} - #{obj.title}"
+		end
 		# column :link
 		# column :yes_symptoms
 		# column :no_symptoms
 
 		# 보기, 수정, 삭제 링크 표시
-		actions
+		actions do |obj|
+			a "이동", href: solution_path(obj.id), method: :put, class: "member_link"
+		end
 	end
 
 	# 생성, 수정을 위한 폼 정의
