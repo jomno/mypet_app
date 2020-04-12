@@ -1,6 +1,6 @@
 class SolutionsController < ApplicationController
   def show
-    @solution = Solution.find(params[:id])
+    @solution = Solution.find_by(s_id: params[:id])
   end
 
   def link

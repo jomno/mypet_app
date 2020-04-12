@@ -24,6 +24,7 @@ class Solution < ApplicationRecord
     }
 
     enum result: RESULT.keys
+    validates :s_id, uniqueness: true
 
     def result_short
         RESULT[self.result].dig(:short)

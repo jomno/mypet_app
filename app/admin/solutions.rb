@@ -12,13 +12,16 @@ ActiveAdmin.register Solution do
 		column :title do |obj|
 			"#{obj.species_name} - #{obj.title}"
 		end
+		column :link do |obj|
+			"http://#{request.host + solution_path(obj.s_id)}"
+		end
 		# column :link
 		# column :yes_symptoms
 		# column :no_symptoms
 
 		# 보기, 수정, 삭제 링크 표시
 		actions do |obj|
-			a "이동", href: solution_path(obj.id), method: :put, class: "member_link"
+			a "이동", href: solution_path(obj.s_id), method: :put, class: "member_link"
 		end
 	end
 
