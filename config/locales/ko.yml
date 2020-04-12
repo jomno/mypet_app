@@ -2,6 +2,7 @@
 ko:
   activerecord:
     models:
+      kakao_api: 챗봇 요청
       admin_user: 관리자
       solution: 시나리오
     attributes:

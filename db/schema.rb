@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_065810) do
+ActiveRecord::Schema.define(version: 2020_04_12_132727) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_065810) do
     t.string "link"
     t.integer "s_id"
     t.text "first_aids"
-    t.string "species_name"
-    t.string "symptom_name"
+    t.integer "species_name", default: 0
+    t.integer "symptom_name", default: 0
     t.text "symptom_details"
     t.integer "result", default: 0
     t.text "cause"

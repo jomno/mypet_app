@@ -24,6 +24,23 @@ class Solution < ApplicationRecord
     }
 
     enum result: RESULT.keys
+    enum species_name: ["개", "고양이"]
+    enum symptom_name: [
+        "기절, 기립불능, 의식불명",
+        "발작",
+        "출혈",
+        "복부팽만",
+        "기침/재채기",
+        "설사",
+        "귓병",
+        "눈병",
+        "소양감",
+        "파행",
+        "부종",
+        "식욕부진",
+        "배출곤란"
+    ]
+
     validates :s_id, uniqueness: true
 
     def result_short
