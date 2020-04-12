@@ -8,7 +8,7 @@ $(function(){
   var elements = document.getElementsByClassName("col-link");
   
   var copyLink = function (){
-    const el = document.createElement('textarea');
+    el = document.createElement('textarea');
     str = this.innerText;
     el.value = str;
     document.body.appendChild(el);
