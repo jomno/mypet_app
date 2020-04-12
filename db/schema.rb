@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_04_12_132727) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -39,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_132727) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.integer "question_id"
+    t.bigint "question_id"
     t.integer "position"
     t.boolean "is_end", default: false
     t.datetime "created_at", null: false
@@ -51,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_132727) do
     t.text "input_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "bot_name"
     t.string "intent_name"
     t.index ["user_id"], name: "index_kakao_apis_on_user_id"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_132727) do
   create_table "questions", force: :cascade do |t|
     t.string "body"
     t.integer "position"
-    t.integer "symptom_id"
+    t.bigint "symptom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["symptom_id"], name: "index_questions_on_symptom_id"
@@ -88,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_132727) do
 
   create_table "symptoms", force: :cascade do |t|
     t.string "name"
-    t.integer "species_id"
+    t.bigint "species_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["species_id"], name: "index_symptoms_on_species_id"
@@ -103,4 +106,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_132727) do
     t.index ["plusfriend_user_key"], name: "index_users_on_plusfriend_user_key"
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "kakao_apis", "users"
+  add_foreign_key "questions", "symptoms"
+  add_foreign_key "symptoms", "species"
 end
