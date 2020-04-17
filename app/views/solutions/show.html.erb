@@ -6,7 +6,7 @@
 					펫 헬스케어 어드바이저
 				</h1>
 			</header>
-	
+
 			<div class="companion-card">
 				<!-- <div class="companion-image">
 				</div> -->
@@ -15,19 +15,23 @@
 					<!-- 준응급상황 - 12시간 이내 내원 권고 -->
 				</h2>
 			</div>
-	
+
 			<section class="companion-section">
 				<h2>
 					상황
 				</h2>
 				<div class="companion-content">
 					<p>
-						<%= @solution.result_detail %>
+						<% if @solution.custom_result.present? %>
+							<%= @solution.custom_result %>
+						<% else %>
+							<%= @solution.result_detail %>
+						<% end %>
 						<!-- 12시간 이내로 수의사의 도움을 받아야 하는 준응급상황입니다. -->
 					</p>
 				</div>
 			</section>
-	
+
 			<section class="companion-section">
 				<h2>어떻게 해야 하나요? 응급 처치를 할 수 있나요?</h2>
 				<div class="companion-content">
@@ -46,7 +50,7 @@
 					</ul> -->
 				</div>
 			</section>
-	
+
 			<section class="companion-section">
 				<h2>
 					어떤 원인때문인가요? 어떤 점이 문제가 될 수 있나요?
@@ -61,7 +65,7 @@
 					</p> -->
 				</div>
 			</section>
-	
+
 			<section class="companion-section">
 				<h2>
 					아래 자료를 수의사 선생님께 가져가시면 빠른 판단에 도움이 될 수 있습니다.
@@ -82,10 +86,10 @@
 							</dd>
 						</div>
 						<% if @solution.symptom_details.present? %>
-							<div class="dd-list">
-								<dt>주요증상 정보 (보호자 체크)</dt>
-								<%= @solution.symptom_details.html_safe %>
-							</div>
+						<div class="dd-list">
+							<dt>주요증상 정보 (보호자 체크)</dt>
+							<%= @solution.symptom_details.html_safe %>
+						</div>
 						<% end %>
 						<div>
 							<p>*이 정보는 펫트너의 펫 헬스케어 어드바이저 챗봇에서 제공합니다.</p>
@@ -93,15 +97,16 @@
 					</dl>
 				</div>
 			</section>
-	
+
 			<section class="companion-section">
 				<h2>
 					사용자 주의사항
 				</h2>
 				<div class="companion-content">
-					<p>'펫 헬스케어 어드바이저' 알고리즘에 따라 제시되는 컨텐츠는 실제로 반려동물을 진료한 수의사의 판단이나 지시사항을 대신할 수 없습니다.</p> 
-					<p>어드바이저의 안내는 특정 증상을 보이는 반려동물에 대해 보호자의 판단에 도움이 되는 단순 정보를 제공할 뿐, 제작사는 보호자가 어드바이저의 안내에 따라 반려동물에게 취한 조치의 수의학적 안전성을 보증하거나 결과에 대한 책임을 지지 않습니다.</p> 
-					<p>어드바이저의 내용과 수의사의 지시가 일치하지 않는 경우 수의사의 지시를 따르시기 바랍니다.</p>	
+					<p>'펫 헬스케어 어드바이저' 알고리즘에 따라 제시되는 컨텐츠는 실제로 반려동물을 진료한 수의사의 판단이나 지시사항을 대신할 수 없습니다.</p>
+					<p>어드바이저의 안내는 특정 증상을 보이는 반려동물에 대해 보호자의 판단에 도움이 되는 단순 정보를 제공할 뿐, 제작사는 보호자가 어드바이저의 안내에 따라 반려동물에게 취한 조치의 수의학적
+						안전성을 보증하거나 결과에 대한 책임을 지지 않습니다.</p>
+					<p>어드바이저의 내용과 수의사의 지시가 일치하지 않는 경우 수의사의 지시를 따르시기 바랍니다.</p>
 					<p>어드바이저의 알고리즘에 따라 컨텐츠를 제시받은 이용자는 이 내용에 동의한 것으로 간주합니다.</p>
 				</div>
 			</section>

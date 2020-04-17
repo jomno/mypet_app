@@ -31,6 +31,7 @@ ActiveAdmin.register Solution do
 		f.inputs do
 			f.input :title
 			f.input :result
+			f.input :custom_result
 			f.input :s_id
 			f.input :first_aids, input_html: {class: "tinymce"}
 			f.input :cause, input_html: {class: "tinymce"}
