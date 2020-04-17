@@ -23,7 +23,7 @@
 				<div class="companion-content">
 					<p>
 						<% if @solution.custom_result.present? %>
-							<%= @solution.custom_result %>
+							<%= simple_format @solution.custom_result %>
 						<% else %>
 							<%= @solution.result_detail %>
 						<% end %>
