@@ -12,6 +12,7 @@ ko:
         title: 증상 시나리오
         s_id: 시나리오_id
         result: 시나리오 결과
+        custom_result: 커스텀 시나리오 결과
         first_aids: 응급처치 방법
         cause: 원인
         species_name: 종 이름
