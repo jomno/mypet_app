@@ -8,10 +8,11 @@ class Api::V1::ApiController < ActionController::API
         @params = request.request_parameters
         @bot_user_key = @params.dig("userRequest", "user", "properties", "bot_user_key")
         @plusfriend_user_key = @params.dig("userRequest", "user", "properties", "plusfriend_user_key")
+        @utterance = @params.dig("userRequest", "utterance")
         @user = User.find_or_create_by(bot_user_key: @params[:bot_user_key], plusfriend_user_key: @params[:plusfriend_user_key]) if Rails.env.development?
         @user = User.find_or_create_by(bot_user_key: @bot_user_key, plusfriend_user_key: @plusfriend_user_key) if Rails.env.production?
 
-        @saved_data = KakaoApi.create(input_data: @params, user: @user)
+        @saved_data = KakaoApi.create(input_data: @params, user: @user, utterance: @utterance)
     end
 
     def default_json

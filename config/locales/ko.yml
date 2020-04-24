@@ -6,6 +6,8 @@ ko:
       admin_user: 관리자
       solution: 시나리오
     attributes:
+      kakao_api:
+        utterance: 발화문
       admin_user:
         email: 관리자 이메일
       solution:
