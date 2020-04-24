@@ -15,6 +15,7 @@ ActiveAdmin.register KakaoApi do
 
     # 나머지 칼럼 정보 표시
     column :user
+    column :utterance
     column :bot_name
     column :intent_name
     column :created_at
